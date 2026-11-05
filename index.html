@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>Computer Science | Third Summative Assessment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;600&family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f6f3eb;--cream:#fffefa;--forest:#214739;--deep:#193d33;--ink:#243b31;--text:#303832;--muted:#637169;--line:#dcded5;--sage:#e9f0e8;--ochre:#bc853e;--gold:#e6c789;--warn:#b8543e;--sans:'DM Sans',system-ui,sans-serif;--serif:'Fraunces',Georgia,serif;--mono:'DM Mono',monospace;--shadow:0 13px 40px #183e3210}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);font:14px/1.6 var(--sans);color:var(--text)}h1,h2,h3,p{margin-top:0}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}button,.button{border-radius:9px;border:1px solid var(--line);background:var(--cream);color:var(--forest);padding:10px 15px;font-weight:800}button:hover:not(:disabled){filter:brightness(.97)}.primary{background:var(--forest);color:white;border-color:var(--forest)}.gold{background:var(--ochre);color:#201b11;border-color:var(--ochre)}.secondary{background:#f1f1e9}.danger{border-color:#e6c8c1;color:#964335;background:#fff7f5}.small{padding:7px 10px;font-size:12px}.eyebrow{color:#98622d;letter-spacing:.15em;text-transform:uppercase;font-size:10px;font-weight:800}.mono{font-family:var(--mono)}.muted{color:var(--muted)}.hidden{display:none!important}.line{border-top:1px solid var(--line);margin:18px 0}.card{background:var(--cream);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}.top{background:var(--deep);color:white;border-bottom:5px solid var(--gold)}.topinner{max-width:1470px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:16px 28px}.logo{display:flex;align-items:center;gap:14px}.seal{height:44px;width:44px;border:1px solid #9ab2a4;border-radius:12px;display:grid;place-items:center;font:600 27px var(--serif);color:var(--gold)}.logo h2{font:600 20px var(--serif);margin:0;color:#fff}.logo small{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:#bed2c5}.topright{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.pill{border-radius:40px;padding:7px 12px;background:#315648;color:#f1f3eb;font:600 11px var(--sans)}.topright .timer{font:700 22px var(--mono);color:#f5dfb4}.timer.low{color:#ffd4c8}.site{max-width:1470px;margin:auto;padding:28px}.hero{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:20px}.hero h1{font:600 clamp(29px,3.8vw,43px)/1.15 var(--serif);margin:5px 0;color:var(--deep)}.hero p{color:var(--muted);margin:0}.login{max-width:1020px;margin:34px auto;display:grid;grid-template-columns:.87fr 1.13fr;overflow:hidden}.loginaside{background:var(--forest);color:white;padding:45px 38px;display:flex;flex-direction:column;justify-content:space-between;gap:22px}.loginaside h1{font:600 37px/1.13 var(--serif);margin:18px 0}.loginaside p{color:#d0e1d4}.loginaside li{padding:6px 0}.loginform{padding:40px}.loginform h2{font:600 28px var(--serif);color:var(--deep);margin:6px 0}.fields{display:grid;gap:14px}.field{display:grid;gap:5px}.field label,.field span.label{font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.field input,.field select{width:100%;border:1px solid #cfd5ca;border-radius:8px;padding:12px;background:#fbfaf6;color:var(--ink)}.pair{display:grid;grid-template-columns:1fr 1fr;gap:13px}.note{background:#f7f0df;border-left:3px solid var(--ochre);border-radius:7px;padding:12px 15px;color:#68553b;font-size:12px}.error{color:#a83a2d;background:#fff1ef;border:1px solid #e9c2bb;border-radius:9px;padding:10px 12px;margin:10px 0}.ok{color:#22604c;background:#edf7ef}.dashboard{display:grid;grid-template-columns:253px minmax(0,1fr);align-items:start;gap:17px}.nav{position:sticky;top:13px;display:grid;gap:14px}.navtitle{padding:19px}.navtitle strong{display:block;font:600 20px var(--serif);color:var(--deep)}.navtitle small{color:var(--muted)}.progress{height:7px;border-radius:10px;background:#e1e7dc;overflow:hidden;margin-top:12px}.progress>div{background:var(--ochre);height:100%;width:0;transition:width .2s}.navbuttons{padding:8px}.navbutton{display:flex;width:100%;align-items:center;gap:12px;text-align:left;border:1px solid transparent;background:transparent;border-radius:9px;padding:12px 10px;color:var(--ink)}.navbutton.sel{border-color:#bbcbba;background:var(--sage)}.navnumber{height:33px;width:33px;border:1px solid #d4dcd2;border-radius:10px;background:white;display:grid;place-items:center;font:700 12px var(--mono);color:var(--forest);flex:none}.navbutton b{font-size:12px;display:block;line-height:1.3}.navbutton small{color:var(--muted)}.navnumber.done{background:var(--forest);color:#fff}.main{min-width:0;display:grid;gap:15px}.sectionhead{padding:25px 28px;display:flex;align-items:start;justify-content:space-between;gap:20px}.sectionhead h2{font:600 32px/1.18 var(--serif);margin:5px 0;color:var(--deep)}.sectionhead p{color:var(--muted);margin-bottom:0;max-width:790px}.points{border:1px solid #dfd9c8;border-radius:8px;background:#f8f2e6;padding:10px 15px;color:#846635;font-weight:800;white-space:nowrap}.content{padding:26px 28px}.questions{display:grid;gap:16px}.question{background:#fcfbf7;border:1px solid #e2e3dc;border-radius:11px;padding:16px}.qrow{display:flex;align-items:flex-start;gap:14px}.qnum{color:#9f753c;font:600 19px var(--serif);min-width:27px}.qbody{flex:1}.qbody p{margin:0 0 11px}.qbody input,.qbody select{padding:11px 12px;border:1px solid #ccd4cc;border-radius:8px;background:#fff;width:100%;max-width:720px;color:var(--ink)}.qbody select{max-width:390px}.diagram{display:block;max-width:min(100%,800px);width:100%;margin:5px auto 20px;border:1px solid #e4e0d2;border-radius:12px;background:white}.diagramnote{font-size:12px;color:var(--muted)}.wordbank{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:18px}.wordbank div{background:#edf2e9;border-radius:8px;padding:9px;font-size:12px}.wordbank b{color:var(--forest)}.foot{padding:16px 23px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.foot small{color:var(--muted)}.editorgrid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,1fr);gap:15px;align-items:start}.editorwrap{min-width:0;overflow:hidden}.editorbar{background:#e9ede6;padding:13px 17px;display:flex;justify-content:space-between;align-items:center}.editorbar b{font:600 12px var(--mono);color:var(--forest)}.editor{position:relative;background:#213f32}.editor textarea{display:block;min-height:385px;width:100%;padding:19px 22px;resize:vertical;background:transparent;border:0;color:#fcf8e9;font:500 15px/1.85 var(--mono);tab-size:4;white-space:pre;overflow:auto;outline-offset:-3px}.editorfoot{padding:10px 17px;background:#2a5141;color:#d5e5da;font-size:11px}.btnrow{display:flex;flex-wrap:wrap;gap:9px;padding:13px}.sidecol{display:grid;gap:15px;min-width:0}.ins{white-space:pre-line;font-size:13px}.promptlist{padding-left:20px}.promptlist li{margin:6px 0}.debug{display:grid;grid-template-columns:1fr 1fr;gap:11px}.debugpart{background:#f6f6f0;border:1px solid #e0e2d9;border-radius:9px;min-height:130px;overflow:hidden}.debugpart h4{font-size:10px;letter-spacing:.11em;color:var(--muted);text-transform:uppercase;background:#e9e9e2;padding:10px;margin:0}.debugpart pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:13px;margin:0;font:12px/1.7 var(--mono)}.inputdesk{padding:14px}.inputdesk textarea{width:100%;height:110px;resize:vertical;border:1px solid #d0d7ce;padding:10px;border-radius:7px;background:#fffdf8;font:12px/1.6 var(--mono)}.help details{border-bottom:1px solid #e0e0d9;padding:11px 0}.help summary{font-weight:800;color:var(--forest);cursor:pointer}.help pre{overflow:auto;background:#edf1ec;border-radius:8px;padding:12px;font:12px/1.8 var(--mono)}.mutedbox{padding:15px;background:#f2f1e9;border-radius:9px;font-size:12px;color:#687069}.pseudonav{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.pseudonav button{padding:12px 7px;font-size:12px}.pseudonav button.active{background:var(--forest);color:white}.submitpanel{border:1px solid #d3ddcf;border-radius:13px;padding:22px;background:#edf2e8}.submitpanel h3{font:600 23px var(--serif);color:var(--deep)}.scoreblock{background:var(--forest);color:#fff;border-radius:14px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:20px}.scoreblock h2{font:600 31px var(--serif);margin:5px 0}.bignum{font:600 clamp(40px,5vw,60px) var(--serif)}.resultgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.resultgrid>div{border:1px solid var(--line);border-radius:9px;text-align:center;padding:15px 6px;background:var(--cream)}.resultgrid strong{display:block;font:600 21px var(--serif);color:var(--forest)}.resultgrid span{display:block;color:var(--muted);font-size:10px}.review{overflow:auto}.review table{width:100%;border-collapse:collapse;font-size:12px}.review th{background:#e9ede6;text-align:left;color:#425b4b;padding:12px}.review td{padding:12px;border-bottom:1px solid #e6e7df;vertical-align:top}.review .good{color:#287c58;font-weight:800}.review .bad{color:#b25143;font-weight:800}.testlist{display:grid;gap:8px}.testitem{border:1px solid #dfe2da;border-radius:9px;padding:12px 15px;background:#fff}.testitem.pass{border-left:4px solid #37835a}.testitem.fail{border-left:4px solid #ad503e}.testitem strong{font-size:12px}.testitem small{display:block;font:11px/1.6 var(--mono);color:#657069;white-space:pre-wrap;overflow-wrap:anywhere}.overlay{position:fixed;inset:0;background:#142c25f2;z-index:9999;display:grid;place-items:center;padding:24px}.overlaybox{max-width:570px;width:100%;border:2px solid #ddbf7d;background:#fffaf0;border-radius:16px;padding:36px;text-align:center}.overlay h2{font:600 31px var(--serif);color:var(--deep)}.toast{position:fixed;right:18px;bottom:18px;background:#234c3d;color:#fff;padding:12px 18px;border-radius:10px;box-shadow:0 8px 24px #0002;z-index:10000;max-width:440px;display:none}#cloudStatus{font-size:11px;color:#d4e5d9}.modal{position:fixed;inset:0;z-index:9000;display:grid;place-items:center;background:#1a332bac;padding:20px}.modalbody{max-width:500px;width:100%;background:#fffdf7;padding:29px;border-radius:15px}.modalbody h3{font:600 26px var(--serif)}.checkline{display:flex;gap:9px;align-items:center;margin:15px 0}.checkline input{width:18px;height:18px}.statusbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:11px}.statusdot{height:8px;width:8px;border-radius:100%;background:#d1a45b}.statusdot.synced{background:#83d1a0}@media(max-width:1040px){.editorgrid{grid-template-columns:1fr}.wordbank{grid-template-columns:repeat(3,1fr)}}@media(max-width:780px){.login{grid-template-columns:1fr}.loginaside{padding:28px}.loginform{padding:24px}.dashboard{grid-template-columns:1fr}.nav{position:static}.navbuttons{display:grid;grid-template-columns:repeat(3,1fr)}.navbutton{padding:8px}.navbutton small{display:none}.site{padding:16px}.hero,.topinner{flex-wrap:wrap}.sectionhead{padding:20px}.content{padding:18px}.wordbank,.resultgrid{grid-template-columns:repeat(2,1fr)}.debug{grid-template-columns:1fr}.scoreblock{flex-direction:column;align-items:start}.pair{grid-template-columns:1fr}}@media(max-width:430px){.navbuttons{grid-template-columns:repeat(2,1fr)}.wordbank{grid-template-columns:1fr}.pseudonav{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header class="top"><div class="topinner">
+ <div class="logo"><div class="seal">CS</div><div><h2>Computer Science Assessment</h2><small>Third Summative · Exam portal</small></div></div>
+ <div class="topright" id="topRight"><span class="pill" id="studentBadge">Not signed in</span><span class="timer hidden" id="timer">Elapsed 00:00</span><button class="small hidden" id="statusButton" type="button" onclick="manualSave()">Save now</button></div>
+</div></header>
+<div id="loginView" class="site">
+  <div class="login card">
+    <div class="loginaside"><div><div class="eyebrow" style="color:#e8c98c">Your assessment</div><h1>Third Summative<br>Assessment</h1><p>Computer systems · Algorithms · Pseudocode</p><div class="line" style="border-color:#577866"></div><ul><li>55 marks total</li><li>5 assessment sections</li><li>Teacher-supervised timing with individual allowances</li><li>Private automatic marking and saved responses</li></ul></div><small>Exam integrity matters. Switching tabs or leaving full screen creates an incident. Incidents are recorded for teacher review. Browser-based monitoring cannot fully prevent switching.</small></div>
+    <form id="loginForm" class="loginform"><div class="eyebrow">Class access code · individual student record</div><h2>Sign in to your exam</h2><p class="muted">Use the <b>single class username and password</b> written on the board by your substitute. Enter your <b>own full name, grade level and section</b> carefully. Each student has one attempt. <b>The teacher controls the finishing time; the elapsed-time display is informational only.</b></p>
+      <div class="fields">
+       <div class="pair"><div class="field"><label for="username">Username</label><input required id="username" autocomplete="username" placeholder="Shared class username"></div><div class="field"><label for="password">Password</label><input required id="password" type="password" autocomplete="current-password" placeholder="Shared class password"></div></div>
+       <div class="field"><label for="studentName">Full name</label><input required id="studentName" maxlength="100" autocomplete="name" placeholder="Your full name"></div>
+       <div class="pair"><div class="field"><label for="grade">Grade level</label><select id="grade" required><option value="">Select grade</option><option>9</option><option>10</option><option>11</option><option>12</option></select></div><div class="field"><label for="section">Section / Class block</label><input required id="section" maxlength="40" placeholder="e.g. H Block"></div></div>
+       <div class="note">Your <b>start time is saved in Supabase</b>. Your teacher announces when you must finish; the displayed time is elapsed time for reference. Refreshing does not reset your start time. After final submission, this identity cannot take the assessment again. Full screen requires your click and browser permission; a normal website cannot prevent all tab/app switching.</div>
+       <div id="loginError" class="error hidden" role="alert"></div>
+       <button id="loginButton" class="primary" type="submit">Enter exam · Request full screen</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div id="examView" class="site hidden">
+ <div class="hero"><div><div class="eyebrow">Live examination</div><h1 id="examHeading">Third Summative Assessment</h1><p id="identityLine"></p></div><div class="statusbar"><span class="statusdot" id="statusDot"></span><span id="cloudStatus">Waiting for cloud save</span><span class="pill" style="background:#ece6d5;color:#66522d" id="incidentBadge">Incidents: 0 / 3</span></div></div>
+ <div class="dashboard">
+   <div class="nav"><div class="card navtitle"><strong>Assessment outline</strong><small id="progressText">0 of 44 answers entered</small><div class="progress"><div id="progressFill"></div></div></div><div class="card navbuttons" id="sectionNav"></div><div class="note">Your answers are saved to the online database under your own full name, grade and section. If you reopen the page before submitting, enter the exact same details to resume; <b>your original start time remains recorded</b>. <b>Run/Step</b> are practice debugger tools; hidden grading occurs only when you submit.</div></div>
+   <div class="main">
+      <div id="sectionArea"></div>
+      <div class="card foot"><div><small id="sectionStep">Section 1 of 5</small></div><div style="display:flex;gap:9px"><button id="prevBtn" type="button" onclick="moveSection(-1)">← Previous</button><button class="primary" id="nextBtn" type="button" onclick="moveSection(1)">Next section →</button></div></div>
+      <div class="submitpanel"><h3>Final submission</h3><p>All responses will be marked on the server and your result will be saved to Supabase. <b>Submission is final and a second attempt with the same identity is blocked.</b> You will see only your total score and section scores; your teacher will send detailed feedback separately.</p><button id="submitButton" class="primary" onclick="confirmSubmit()">Submit exam and see my result</button></div>
+   </div>
+ </div>
+</div>
+<div id="resultsView" class="site hidden"></div>
+<div id="fullscreenOverlay" class="overlay hidden"><div class="overlaybox"><div class="eyebrow">Exam integrity notice</div><h2>Return to full screen</h2><p>The assessment detected an exit from full screen or another interruption. This event may be recorded. To continue, click the button below.</p><p id="overlayIncidents" class="muted"></p><button class="primary" onclick="restoreFullscreen()">Return to exam in full screen</button><p class="muted" style="font-size:11px;margin:15px 0 0">A normal website cannot block operating-system shortcuts, browsers, or other applications.</p></div></div>
+<div id="confirmModal" class="modal hidden"><div class="modalbody"><div class="eyebrow">Confirm final submission</div><h3>Are you finished?</h3><p>Your answers will be permanently submitted and scored. You will immediately see your score only. Detailed corrections will be provided by your teacher separately.</p><label class="checkline"><input id="confirmCheckbox" type="checkbox"> I understand I cannot edit after submitting.</label><div style="display:flex;gap:10px;justify-content:end"><button onclick="closeConfirm()">Go back</button><button class="primary" id="finalSubmitBtn" onclick="submitExam()">Submit and mark</button></div></div></div>
+<div id="toast" class="toast" role="status"></div>
+<script src="config.js"></script><script src="engine.js"></script>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const conf=window.EXAM_CONFIG||{};
+// Client-side convenience lock (NOT a security measure): Supabase is the authority.
+// Hash the normalized identity so a browser marker does not store a student's name.
+function submittedMarker(name,grade,section){
+ const cleanId=x=>String(x||'').trim().toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,'');
+ const id=String(grade)+'|'+cleanId(section)+'|'+cleanId(name);
+ let hash=2166136261;
+ for(let i=0;i<id.length;i++){hash=Math.imul(hash^id.charCodeAt(i),16777619);}
+ return 'cs-summative-v2:completed:'+((hash>>>0).toString(16).padStart(8,'0'));
+}
+function browserSubmitted(name,grade,section){try{return !!localStorage.getItem(submittedMarker(name,grade,section));}catch{return false;}}
+function rememberSubmitted(name,grade,section){try{localStorage.setItem(submittedMarker(name,grade,section),new Date().toISOString());}catch{}}
+
+const SECTION_NAMES=['Identification','CPU diagram','Instruction cycle','Multiple choice','Pseudocode'];
+const SECTION_DESCS=[
+  'Identify each computer system component or concept. Write its full name or standard abbreviation where applicable.',
+  'Label the numbered components in the original Von Neumann CPU block diagram. Full names are required; abbreviations are not accepted in this section.',
+  'Arrange the instruction cycle in order and identify its relationship to productivity.',
+  'For each definition, choose the matching term from the word bank.',
+  'Write four executable pseudocode solutions. You may run and step through your code with your own sample inputs. The private test cases are marked after submission.'
+];
+const SECTIONS_MARKS=[10,10,5,10,20];
+const identification=[
+ 'It is the only storage that is directly accessible by the CPU.',
+ 'It is a general-purpose storage area, meaning the data stored can be overwritten. It allows data and instructions to be loaded for execution when needed.',
+ 'The instructions embedded here cannot be changed and are retained without power. This is non-volatile memory.',
+ 'It is capable of basic arithmetic operations such as adding, subtracting, multiplying, and dividing two numbers.',
+ 'It is how data and programs from the outside world are entered into the computer.',
+ 'It is how results stored in memory are made available to the outside world.',
+ 'It controls CPU operation, instruction retrieval from primary memory, and the sequence of execution.',
+ 'It holds data to be used by the ALU and transferred to or from memory.',
+ 'It holds the memory address of the data to be used by the ALU so the corresponding content can be fetched.',
+ 'It is the bus that carries the actual data fetched from RAM for processing.'
+];
+const multipleChoice=[
+ 'It is a series of unambiguous instructions designed to solve a problem and achieve a goal in a finite number of steps.',
+ 'It is an artificial language that does not use the syntax of any particular programming language.',
+ 'It refers to terminating an algorithm after a specific number of steps.',
+ 'It refers to the impact or usefulness of an algorithm.',
+ 'It refers to the clarity and definition of each step of an algorithm.',
+ 'This representation of an algorithm is usually ambiguous.',
+ 'It is a formalized graphical representation of an algorithm.',
+ 'These languages have syntax and can be used by humans to communicate instructions to a computer.',
+ 'These are quantities that must be given before an algorithm begins.',
+ 'These are the outcome and quantities produced based on the input.'
+];
+const bank=[['a','Input'],['b','Definite'],['c','Effectiveness'],['d','Output'],['e','Programming language'],['f','Flowchart'],['g','Pseudocode'],['h','Simple English'],['i','Finite'],['j','Algorithm']];
+const exercises=[
+ {title:'Average of five marks',topic:'Selection + repetition',brief:'Create a program that READS five subject marks. You may display a prompt before each input. Use repetition to calculate the average and WRITE both the average and its verbal interpretation.',bullets:['90–100: Excellent','80–89.99: Very Good','70–79.99: Fair','Below 70: Poor','Use a loop for the five inputs.'],sample:'95\n90\n100\n92\n98',hint:'Initialize total to 0. Use a LOOP from 1 to 5 and add each READ mark. Divide by 5, then use IF / ELSE IF / ELSE.'},
+ {title:'Password checking',topic:'Selection + bounded repetition',brief:'Create a password-checking algorithm that allows a maximum of five attempts. The correct password is "2@991bN". The program should stop early when a correct password is entered.',bullets:['Display a prompt and READ the attempted password.','For a correct password, display a successful login message.','For a wrong attempt, an error message may be displayed.','After five incorrect attempts, display a message telling the user to try again after 5 minutes.'],sample:'wrong\n2@991bN',hint:'Track a counter and a Boolean variable. Repeat WHILE attempts < 5 AND authenticated = FALSE.'},
+ {title:'Rainfall records',topic:'Arrays + repetition + selection',brief:'Use an array called rainfall with four elements to store four daily rainfall measurements. Count how many values are strictly GREATER THAN 5. WRITE the final number of heavy-rain days.',bullets:['Declare rainfall[4] using zero-based indexes 0–3.','READ one value into each index using a loop.','Count each value greater than 5.','Display your count after reading the four values.'],sample:'3\n8\n6\n1',hint:'Declare rainfall[4], set count to 0, LOOP index FROM 0 TO 3, then READ rainfall[index] and check rainfall[index] > 5.'},
+ {title:'Purchase discount',topic:'Assignment + selection',brief:'READ the price of one item and the quantity ordered. Compute the total cost. If the total cost is 500 or more, apply a 10% discount. WRITE the final payable amount.',bullets:['READ price and quantity.','Compute the original total (price × quantity).','If total ≥ 500, multiply the total by 0.90.','Display the final numeric amount.'],sample:'200\n3',hint:'SET total TO price * quantity; IF (total >= 500) THEN SET total TO total * 0.90; END IF; WRITE total.'}
+];
+const blank=()=>({ident:{},labels:{},cycleOrder:['','','',''],cycleProductivity:'',mc:{},pseudo:{1:'',2:'',3:'',4:''}});
+function normalizeIncoming(a){
+ const b=blank(),v=(a&&typeof a==='object'&&!Array.isArray(a))?a:{};
+ return {ident:{...b.ident,...(v.ident||{})},labels:{...b.labels,...(v.labels||{})},
+  cycleOrder:Array.isArray(v.cycleOrder)?[0,1,2,3].map(i=>String(v.cycleOrder[i]||'')):b.cycleOrder,
+  cycleProductivity:v.cycleProductivity||'',mc:{...b.mc,...(v.mc||{})},pseudo:{...b.pseudo,...(v.pseudo||{})}};
+}
+let state={answers:blank(),section:0,exercise:1,submitted:false,token:'',startedAt:null,active:false,incidentCount:0,grade:'',name:'',block:'',clockOffset:0};
+let debugMachine=null,dirty=false,saving=false,savePending=false,saveTimer=null,timerTick=null,lastIncidentAt=0;
+function escaped(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function showToast(txt){const el=$('toast');el.textContent=txt;el.style.display='block';clearTimeout(showToast.timeout);showToast.timeout=setTimeout(()=>el.style.display='none',4200);}
+function cloud(msg,synced=false){$('cloudStatus').textContent=msg;$('statusDot').classList.toggle('synced',synced);}
+function configured(){return /^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/i.test(conf.supabaseUrl||'') && (conf.publishableKey||'').startsWith('sb_publishable_');}
+async function callApi(action,extra={},keepalive=false){
+ if(!configured())throw new Error('Website is not connected. Ask your teacher to configure config.js with the Supabase Project URL and Publishable Key.');
+ const response=await fetch(conf.supabaseUrl.replace(/\/$/,'')+'/functions/v1/'+(conf.functionName||'summative-exam'),{
+  method:'POST',headers:{'Content-Type':'application/json','apikey':conf.publishableKey},
+  body:JSON.stringify({action,...extra}),cache:'no-store',keepalive
+ });
+ let data;try{data=await response.json()}catch{throw new Error('Supabase did not return a JSON response. Check that the Edge Function is deployed.');}
+ if(!response.ok||!data.ok)throw new Error(data.error||('Server error '+response.status));
+ return data;
+}
+function showLoginError(t){$('loginError').textContent=t;$('loginError').classList.remove('hidden');}
+$('loginForm').addEventListener('submit',async event=>{
+ event.preventDefault();$('loginError').classList.add('hidden');
+ const data={username:$('username').value.trim(),password:$('password').value,
+  name:$('studentName').value.trim(),grade:$('grade').value,section:$('section').value.trim()};
+ if(browserSubmitted(data.name,data.grade,data.section)){
+   showLoginError('You already submitted the exam on this browser. A second attempt is not allowed. If this is a mistake, contact your teacher.');return;
+ }
+ if(!configured()){showLoginError('Ask your teacher to finish the Supabase setup in config.js before starting the exam.');return;}
+ $('loginButton').disabled=true;$('loginButton').textContent='Signing in…';
+ try{
+  if(!document.fullscreenElement && document.documentElement.requestFullscreen){
+    await document.documentElement.requestFullscreen();
+  }else if(!document.documentElement.requestFullscreen){
+    showToast('This browser does not support standard fullscreen. Use desktop Chrome if possible.');
+  }
+  const resp=await callApi('login',data);
+  state.token=resp.token;
+  state.name=resp.identity.name;state.grade=resp.identity.grade;state.block=resp.identity.section;
+  state.answers=normalizeIncoming(resp.answers);state.startedAt=resp.startedAt;
+  state.clockOffset=resp.serverNow?new Date(resp.serverNow).getTime()-Date.now():0;
+  state.incidentCount=0;state.active=!resp.submitted;state.submitted=resp.submitted;
+  $('studentBadge').textContent=resp.identity.name+' · G'+resp.identity.grade;
+  if(resp.submitted){showResults(resp);return;}
+  $('loginView').classList.add('hidden');$('examView').classList.remove('hidden');$('timer').classList.remove('hidden');$('statusButton').classList.remove('hidden');
+  $('identityLine').textContent=state.name+' · Grade '+state.grade+' · '+state.block;
+  cloud('Online · work restored from Supabase',true);
+  initNavigation();renderSection();startTimer();
+  if(!document.fullscreenElement)showFullscreenGate();
+ }catch(e){showLoginError(e.message);if(document.fullscreenElement&&!state.active){try{await document.exitFullscreen();}catch{}}}
+ finally{$('loginButton').disabled=false;$('loginButton').textContent='Enter exam · Request full screen';}
+});
+function completedTotal(){let count=0;for(let i=1;i<=10;i++)count+=Number(!!(state.answers.ident?.[i]||'').trim());for(let i=11;i<=20;i++)count+=Number(!!(state.answers.labels?.[i]||'').trim());count+=(state.answers.cycleOrder||[]).filter(Boolean).length;count+=Number(!!state.answers.cycleProductivity);for(let i=26;i<=35;i++)count+=Number(!!state.answers.mc?.[i]);for(let i=1;i<=4;i++)count+=Number(!!(state.answers.pseudo?.[i]||'').trim());return count;}
+function sectionCount(idx){
+ if(idx===0)return Array.from({length:10},(_,i)=>state.answers.ident?.[i+1]).filter(v=>v?.trim()).length;
+ if(idx===1)return Array.from({length:10},(_,i)=>state.answers.labels?.[i+11]).filter(v=>v?.trim()).length;
+ if(idx===2)return state.answers.cycleOrder.filter(Boolean).length+Number(!!state.answers.cycleProductivity);
+ if(idx===3)return Object.values(state.answers.mc).filter(Boolean).length;
+ return [1,2,3,4].filter(i=>(state.answers.pseudo?.[i]||'').trim()).length;
+}
+function initNavigation(){
+ const names=['I · Identification','II · CPU diagram','III · Instruction cycle','IV · Multiple choice','V · Pseudocode'];
+ $('sectionNav').innerHTML=names.map((n,i)=>`<button type="button" class="navbutton" data-nav="${i}" onclick="goSection(${i})"><span class="navnumber" id="navDot${i}">${i+1}</span><span><b>${n}</b><small id="navCount${i}">0 / ${[10,10,5,10,4][i]} answered</small></span></button>`).join('');
+ updateNav();
+}
+function updateNav(){
+ const cnt=completedTotal();$('progressText').textContent=cnt+' of 39 responses entered';$('progressFill').style.width=(cnt/39*100)+'%';
+ for(let i=0;i<5;i++){
+  const done=sectionCount(i),max=[10,10,5,10,4][i];
+  const bt=document.querySelector(`[data-nav="${i}"]`);if(bt)bt.classList.toggle('sel',i===state.section);
+  const dot=$('navDot'+i);if(dot)dot.classList.toggle('done',done===max);
+  const label=$('navCount'+i);if(label)label.textContent=done+' / '+max+' answered';
+ }
+ $('sectionStep').textContent=`Section ${state.section+1} of 5`;
+ $('prevBtn').disabled=state.section===0;$('nextBtn').disabled=state.section===4;
+}
+function markDirty(){dirty=true;cloud('Unsaved changes · syncing…');clearTimeout(saveTimer);saveTimer=setTimeout(saveNow,1300);updateNav();}
+async function saveNow(){
+ if(!state.token||state.submitted)return;
+ if(saving){savePending=true;return;}
+ if(!dirty)return;
+ saving=true;savePending=false;dirty=false;
+ const snapshot=structuredClone(state.answers);
+ try{const res=await callApi('save',{token:state.token,answers:snapshot});
+   if(res.submitted){showResults(res);return;}
+   cloud(dirty?'More edits to save…':'Saved to Supabase · '+new Date().toLocaleTimeString(),!dirty);
+ }catch(e){dirty=true;cloud('Save failed · internet connection needed');showToast('Could not save: '+e.message);}
+ finally{saving=false;if(savePending||dirty){clearTimeout(saveTimer);saveTimer=setTimeout(saveNow,2000);}}
+}
+function manualSave(){if(!state.active)return;dirty=true;saveNow();}
+function goSection(i){if(!state.active)return;state.section=i;debugMachine=null;renderSection();updateNav();window.scrollTo({top:0,behavior:'smooth'});}
+function moveSection(delta){goSection(Math.min(4,Math.max(0,state.section+delta)));}
+function headerMarkup(){return `<div class="card sectionhead"><div><div class="eyebrow">Part ${['I','II','III','IV','V'][state.section]}</div><h2>${SECTION_NAMES[state.section]}</h2><p>${SECTION_DESCS[state.section]}</p></div><div class="points">${SECTIONS_MARKS[state.section]} marks</div></div>`;}
+function renderSection(){
+ let body='';
+ if(state.section===0)body=identification.map((q,i)=>textQuestion(i+1,q,'ident')).join('');
+ if(state.section===1){body=`<p class="diagramnote">Diagram reproduced from the attached examination paper. Label items 11–20 using complete terms (no abbreviations).</p><img class="diagram" src="cpu-diagram.png" alt="Von Neumann CPU, input, output, primary memory and buses diagram with labels 11 through 20">`+
+ Array.from({length:10},(_,i)=>textQuestion(i+11,`Label component ${i+11} in the diagram.`,'labels')).join('');}
+ if(state.section===2){body=`<div class="note" style="margin-bottom:16px">Choose the order of the four machine instruction cycle stages. Each correct position is 1 mark.</div>`+
+ Array.from({length:4},(_,i)=>`<div class="question"><div class="qrow"><span class="qnum">${i+21}.</span><div class="qbody"><p>Step ${i+1} in the instruction cycle</p><select data-cycle="${i}" aria-label="Step ${i+1}"><option value="">Choose a stage</option>${['Fetch','Decode','Execute','Store'].map(v=>`<option ${state.answers.cycleOrder?.[i]===v?'selected':''}>${v}</option>`).join('')}</select></div></div></div>`).join('')+
+ `<div class="question"><div class="qrow"><span class="qnum">25.</span><div class="qbody"><p>Which statement best describes how the instruction cycle relates to computer productivity?</p><select id="cycleProductivity"><option value="">Select an answer</option><option value="a" ${state.answers.cycleProductivity==='a'?'selected':''}>A. The instruction cycle only affects permanent storage.</option><option value="b" ${state.answers.cycleProductivity==='b'?'selected':''}>B. Completing instruction cycles more efficiently can increase instruction throughput.</option><option value="c" ${state.answers.cycleProductivity==='c'?'selected':''}>C. The instruction cycle has no relationship to performance.</option></select></div></div></div>`;}
+ if(state.section===3)body=`<div class="wordbank">${bank.map(([a,b])=>`<div><b>${a.toUpperCase()}.</b> ${escaped(b)}</div>`).join('')}</div>`+multipleChoice.map((q,i)=>`<div class="question"><div class="qrow"><span class="qnum">${i+26}.</span><div class="qbody"><p>${escaped(q)}</p><select data-mc="${i+26}"><option value="">Choose a letter / term</option>${bank.map(([l,w])=>`<option value="${l}" ${state.answers.mc?.[i+26]===l?'selected':''}>${l.toUpperCase()}. ${escaped(w)}</option>`).join('')}</select></div></div></div>`).join('');
+ if(state.section===4)body=pseudocodeMarkup();
+ $('sectionArea').innerHTML=headerMarkup()+`<div class="card content"><div class="questions">${body}</div></div>`;
+ if(state.section===4)initializeEditor();
+ wireInputs();updateNav();
+}
+function textQuestion(n,q,group){return `<div class="question"><div class="qrow"><span class="qnum">${n}.</span><div class="qbody"><p>${escaped(q)}</p><input type="text" data-answer-group="${group}" data-number="${n}" value="${escaped(state.answers[group]?.[n]||'')}" aria-label="Question ${n} answer" maxlength="160" placeholder="Type your answer here" autocomplete="off" spellcheck="false"></div></div></div>`;}
+function wireInputs(){
+ document.querySelectorAll('input[data-answer-group]').forEach(el=>el.addEventListener('input',()=>{state.answers[el.dataset.answerGroup][el.dataset.number]=el.value;markDirty();}));
+ document.querySelectorAll('select[data-cycle]').forEach(el=>el.addEventListener('change',()=>{state.answers.cycleOrder[Number(el.dataset.cycle)]=el.value;markDirty();}));
+ document.querySelectorAll('select[data-mc]').forEach(el=>el.addEventListener('change',()=>{state.answers.mc[el.dataset.mc]=el.value;markDirty();}));
+ if($('cycleProductivity'))$('cycleProductivity').addEventListener('change',el=>{state.answers.cycleProductivity=el.target.value;markDirty();});
+}
+function pseudocodeMarkup(){
+ const ex=exercises[state.exercise-1];
+ return `<div class="pseudonav">${exercises.map((x,i)=>`<button type="button" class="${state.exercise===i+1?'active':''}" onclick="goExercise(${i+1})">Problem ${i+1} <small>· 5 marks</small></button>`).join('')}</div>
+ <div class="card" style="box-shadow:none;padding:18px"><div class="eyebrow">Problem ${state.exercise} · ${escaped(ex.topic)}</div><h3 style="font:600 26px var(--serif);color:var(--deep);margin:6px 0">${escaped(ex.title)}</h3><p>${escaped(ex.brief)}</p><ul class="promptlist">${ex.bullets.map(x=>`<li>${escaped(x)}</li>`).join('')}</ul><details class="help"><summary>Optional planning hint</summary><p class="muted">${escaped(ex.hint)}</p></details></div>
+ <div class="editorgrid"><div class="card editorwrap"><div class="editorbar"><b>student_solution_${state.exercise}.pseudo</b><span class="mono muted" id="activeLine">Ready</span></div><div class="editor"><textarea id="codeEditor" aria-label="Pseudocode editor" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="// Write your pseudocode here.&#10;READ number&#10;...">${escaped(state.answers.pseudo?.[state.exercise]||'')}</textarea></div><div class="editorfoot">Write pseudocode, not Java/Python. Use END IF, END WHILE or END LOOP. Ctrl/⌘+Enter to Run.</div><div class="btnrow"><button class="primary" onclick="runCode()">▶ Run</button><button class="gold" onclick="stepCode()">↳ Step</button><button onclick="resetCode()">↻ Reset debugger</button><button onclick="insertStructure()">+ Insert structure</button></div></div>
+ <div class="sidecol"><div class="card inputdesk"><div class="eyebrow">Manual sample inputs</div><h3 style="font:600 18px var(--serif);color:var(--deep);margin:3px 0">Input desk</h3><p class="muted" style="font-size:11px">One READ value per line. These inputs are for trying your own solution—not the private marking cases.</p><textarea id="testInputs">${escaped(ex.sample)}</textarea></div>
+ <div class="card inputdesk"><h3 style="font:600 20px var(--serif);color:var(--deep);margin:0 0 10px">Debugger desk</h3><div class="debug"><div class="debugpart"><h4>Current instruction</h4><pre id="dbgCurrent">Run or Step to begin.</pre></div><div class="debugpart"><h4>Variable watch / arrays</h4><pre id="dbgVariables">Waiting for execution.</pre></div><div class="debugpart"><h4>Output</h4><pre id="dbgOutput">Waiting for output.</pre></div><div class="debugpart"><h4>Execution / errors</h4><pre id="dbgMessage">No program run yet.</pre></div></div></div></div></div>
+ <div class="card" style="box-shadow:none;padding:20px"><div class="eyebrow">Student reference</div><h3 style="font:600 22px var(--serif);color:var(--deep)">Pseudocode syntax guide</h3><p class="muted" style="font-size:12px">This debugger supports a defined teaching subset. Pseudocode has no universal executable syntax. RUN uses your sample inputs; final grading is performed privately on the server.</p><div class="help">
+ <details open><summary>Variables, assignment, input/output</summary><pre>READ number\nSET total TO 0\ntotal &lt;- total + number\nWRITE "Answer: " + total</pre></details>
+ <details><summary>Selection</summary><pre>IF (number &gt; 0) THEN\n    WRITE "Positive"\nELSE IF (number = 0) THEN\n    WRITE "Zero"\nELSE\n    WRITE "Negative"\nEND IF</pre></details>
+ <details><summary>WHILE and LOOP</summary><pre>SET counter TO 0\nWHILE (counter &lt; 5)\n    SET counter TO counter + 1\nEND WHILE\n\nLOOP i FROM 0 TO 3\n    WRITE i\nEND LOOP</pre></details>
+ <details><summary>Arrays and operators</summary><pre>values[4]\nLOOP i FROM 0 TO 3\n    READ values[i]\nEND LOOP\n// Operators: +, -, *, /, DIV, REM\n// Comparisons: &gt;, &lt;, &gt;=, &lt;=, =, &lt;&gt;\n// Boolean: AND, OR, NOT</pre></details>
+ </div></div>`;
+}
+function goExercise(n){if(!state.active)return;state.exercise=n;debugMachine=null;renderSection();}
+function initializeEditor(){
+ const editor=$('codeEditor');if(!editor)return;
+ editor.addEventListener('input',()=>{state.answers.pseudo[state.exercise]=editor.value;debugMachine=null;markDirty();});
+ editor.addEventListener('keydown',evt=>{if(evt.key==='Tab'){evt.preventDefault();const a=editor.selectionStart,b=editor.selectionEnd;editor.value=editor.value.slice(0,a)+'    '+editor.value.slice(b);editor.selectionStart=editor.selectionEnd=a+4;state.answers.pseudo[state.exercise]=editor.value;markDirty();}
+ if((evt.ctrlKey||evt.metaKey)&&evt.key==='Enter'){evt.preventDefault();runCode();}});
+}
+function parseDesk(){return ($('testInputs')?.value||'').split('\n').map(x=>x.trim()).filter(Boolean);}
+function createDebugMachine(){try{return PseudoEngine.newMachine($('codeEditor').value,parseDesk());}catch(e){showDebugError(e);return null;}}
+function showDebugError(e){$('dbgMessage').textContent=String(e.message||e);$('dbgCurrent').textContent='Syntax error';$('activeLine').textContent='Check syntax';}
+function runCode(){debugMachine=createDebugMachine();if(!debugMachine)return;while(!debugMachine.done&&!debugMachine.error)PseudoEngine.advance(debugMachine);renderDebugger();}
+function stepCode(){if(!debugMachine||debugMachine.done||debugMachine.error){debugMachine=createDebugMachine();if(!debugMachine)return;}PseudoEngine.advance(debugMachine);renderDebugger();}
+function resetCode(){debugMachine=null;if(!$('dbgMessage'))return;$('dbgCurrent').textContent='Run or Step to begin.';$('dbgVariables').textContent='Waiting for execution.';$('dbgOutput').textContent='Waiting for output.';$('dbgMessage').textContent='Debugger reset.';$('activeLine').textContent='Ready';}
+function renderDebugger(){if(!debugMachine)return;const m=debugMachine;
+ const instruction=m.compiled?.instructions?.find(i=>i.line===m.activeLine);
+ $('dbgCurrent').textContent=m.activeLine?'Line '+m.activeLine+': '+(m.compiled.lines[m.activeLine-1]||'').trim():'Ready';
+ $('dbgVariables').textContent=Object.keys(m.env).length?Object.entries(m.env).map(([a,b])=>a+' = '+JSON.stringify(b)).join('\n'):'No variables set yet.';
+ $('dbgOutput').textContent=m.outputs.length?m.outputs.join('\n'):'No output yet.';
+ $('dbgMessage').textContent=m.error?'Error: '+m.error.message:m.done?'Program finished after '+m.steps+' steps.':'Step '+m.steps+' · '+(instruction?.op||'next');
+ $('activeLine').textContent=m.error?'Error':m.done?'Finished':`Line ${m.activeLine}`;
+ const editor=$('codeEditor');if(m.activeLine&&editor){const before=m.compiled.lines.slice(0,m.activeLine-1).join('\n');const start=(m.activeLine===1?0:before.length+1),end=start+m.compiled.lines[m.activeLine-1].length;editor.setSelectionRange(start,end);}
+}
+function insertStructure(){const choice=prompt('Insert a general structure: type IF, WHILE, or LOOP.');if(!choice)return;const snippets={IF:'IF (condition) THEN\n    // instructions\nELSE\n    // alternative\nEND IF',WHILE:'WHILE (condition)\n    // instructions\nEND WHILE',LOOP:'LOOP i FROM 0 TO 3\n    // instructions\nEND LOOP'};
+ const snip=snippets[choice.toUpperCase().trim()];if(!snip){showToast('Choose IF, WHILE, or LOOP.');return;}const e=$('codeEditor'),s=e.selectionStart,t=e.selectionEnd;e.value=e.value.slice(0,s)+snip+e.value.slice(t);state.answers.pseudo[state.exercise]=e.value;markDirty();e.focus();}
+function startTimer(){
+ if(timerTick)clearInterval(timerTick);
+ const tick=()=>{
+   // This is elapsed time for reference only. There is NO automatic cutoff.
+   const elapsed=Math.max(0,Math.floor(((Date.now()+state.clockOffset)-new Date(state.startedAt).getTime())/1000));
+   const hours=Math.floor(elapsed/3600),minutes=Math.floor((elapsed%3600)/60),seconds=elapsed%60;
+   $('timer').textContent='Elapsed '+(hours?String(hours).padStart(2,'0')+':':'')+String(minutes).padStart(2,'0')+':'+String(seconds).padStart(2,'0');
+ };
+ tick();timerTick=setInterval(tick,1000);
+}
+function confirmSubmit(){if(!state.active)return;$('confirmCheckbox').checked=false;$('confirmModal').classList.remove('hidden');}
+function closeConfirm(){$('confirmModal').classList.add('hidden');}
+async function submitExam(reason='student_submit'){
+ if(!state.active||state.submitted)return;
+ if(reason==='student_submit'&&!$('confirmCheckbox').checked){showToast('Tick the confirmation checkbox first.');return;}
+ $('confirmModal').classList.add('hidden');$('submitButton').disabled=true;cloud('Submitting and grading your work…');
+ try{const res=await callApi('submit',{token:state.token,answers:state.answers});showResults(res);}
+ catch(e){showToast('Submission failed: '+e.message+'. Your work remains open. Try again.');$('submitButton').disabled=false;cloud('Connection problem · submission not confirmed');}
+}
+function showResults(res){
+ state.submitted=true;state.active=false;clearInterval(timerTick);clearTimeout(saveTimer);
+ rememberSubmitted(state.name||res.identity?.name,state.grade||res.identity?.grade,state.block||res.identity?.section);
+ $('loginView').classList.add('hidden');$('examView').classList.add('hidden');$('resultsView').classList.remove('hidden');$('fullscreenOverlay').classList.add('hidden');$('confirmModal').classList.add('hidden');
+ $('timer').classList.add('hidden');$('statusButton').classList.add('hidden');
+ if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});
+ const sec=res.sections||{}, total=Number(res.score)||0, maximum=Number(res.maximum)||55;
+ const labels=[['identification','Identification',10],['diagram','CPU architecture',10],['cycle','Instruction cycle',5],['multiple_choice','Algorithm concepts',10],['pseudocode','Pseudocode',20]];
+ const cards=labels.map(([key,label,max])=>`<div><strong>${Number(sec[key])||0}/${max}</strong><span>${escaped(label)}</span></div>`).join('');
+ $('resultsView').innerHTML=`<div class="eyebrow">Assessment completed · final submission</div>
+ <div class="scoreblock"><div><div class="eyebrow" style="color:#efcca0">Submission saved</div><h2>${escaped(state.name||res.identity?.name)}</h2><p style="margin:0;color:#d1e0d5">Grade ${escaped(state.grade||res.identity?.grade)} · ${escaped(state.block||res.identity?.section)}</p></div><div><span class="bignum">${total} / ${maximum}</span><div style="text-align:right;color:#e8d7b3">${(total/Math.max(1,maximum)*100).toFixed(1)}%</div></div></div>
+ <div style="height:16px"></div><div class="resultgrid">${cards}</div>
+ <div style="height:18px"></div><div class="card content"><h2 style="font:600 27px var(--serif);color:var(--deep)">Your exam is complete — show this confirmation before leaving</h2><p>Only your score and section totals are shown here. Your teacher will review the marking and send your individual answer-and-corrections report separately.</p><p class="muted"><b>Submission confirmed in Supabase: ${escaped(res.submittedAt?new Date(res.submittedAt).toLocaleString():'recorded')}</b>. Show this screen to your supervising teacher before you leave the room. Your account cannot start a second attempt under the same recorded identity.</p><button onclick="window.print()" type="button">Print this score summary</button></div>`;
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function showFullscreenGate(){if(state.active)$('fullscreenOverlay').classList.remove('hidden');}
+async function restoreFullscreen(){try{await document.documentElement.requestFullscreen();$('fullscreenOverlay').classList.add('hidden');}catch{showToast('Fullscreen could not start. Try the exam in desktop Chrome.');}}
+async function reportIncident(kind){if(!state.active)return;
+ const now=Date.now();if(now-lastIncidentAt<1600)return;lastIncidentAt=now;
+ state.incidentCount++;$('incidentBadge').textContent='Incidents: '+state.incidentCount;
+ try{const resp=await callApi('incident',{token:state.token,kind,answers:state.answers},true);
+  state.incidentCount=resp.incidentCount??state.incidentCount;$('incidentBadge').textContent='Incidents: '+state.incidentCount;
+  if(resp.submitted){showResults(resp);}else showToast('Exam integrity incident recorded ('+state.incidentCount+').');
+ }catch(e){showToast('Incident recording could not reach Supabase: '+e.message);}
+}
+document.addEventListener('fullscreenchange',()=>{if(!state.active)return;if(!document.fullscreenElement){reportIncident('fullscreen_exit');showFullscreenGate();}else $('fullscreenOverlay').classList.add('hidden');});
+document.addEventListener('visibilitychange',()=>{if(!state.active)return;if(document.hidden){reportIncident('tab_hidden');}else if(!document.fullscreenElement){showFullscreenGate();}});
+window.addEventListener('beforeunload',e=>{if(!state.active)return;e.preventDefault();e.returnValue='';});
+window.addEventListener('online',()=>{if(state.active){cloud('Back online · saving work');manualSave();}});
+</script>
+</body></html>
